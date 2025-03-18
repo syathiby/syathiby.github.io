@@ -6,24 +6,26 @@
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta http-equiv="Expires" content="0">
-	<meta name="viewport" content= 
-		"width=device-width, initial-scale=1.0"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<style> 
 		body { 
 			font-family: Arial, sans-serif; 
 			margin: 0; 
 			padding: 0; 
+			line-height: 1.6;
 		} 
 
 		header { 
 			background-color: #ffffff; 
 			color: #000000; 
 			text-align: center; 
+			padding: 1rem 0;
 		} 
 
 		nav { 
 			background-color: #528b6a; 
 			padding: 10px; 
+			text-align: center;
 		} 
 
 		nav a { 
@@ -36,10 +38,12 @@
 
 		.container { 
 			display: flex; 
+			flex-direction: row;
 			justify-content: space-between; 
-			max-width: 95%; 
+			max-width: 1200px; 
+			width: 95%;
 			margin: 0 auto; 
-			padding: 20px; 
+			padding: 20px 0; 
 		} 
 
 		article p { 
@@ -48,29 +52,37 @@
 
 		main { 
 			flex: 2; 
+			margin-right: 20px;
 		} 
 
 		article { 
 			margin-bottom: 20px; 
-			padding: 10px 20px; 
+			padding: 15px 20px; 
 			border: 1px solid rgb(145, 145, 145); 
-			margin-right: 10px; 
+			border-radius: 5px;
 		} 
 
 		aside { 
 			flex: 1; 
 			background-color: #ddffdd; 
-			padding: 10px; 
+			padding: 15px; 
+			border-radius: 5px;
+			height: fit-content;
 		} 
 
 		footer { 
 			background-color: #528b6a; 
 			color: #fff; 
 			text-align: center; 
-			position: fixed; 
-			bottom: 0; 
+			padding: 10px 0;
+			position: relative; /* Changed from fixed to relative */
 			width: 100%; 
+			margin-top: 20px;
 		} 
+
+		.content-wrapper {
+			padding-bottom: 50px; /* Space for footer */
+		}
 
 		/* Scroll to Top Button */
 		#scrollToTopBtn {
@@ -95,14 +107,98 @@
 
 		/* Responsive Image */
 		.responsive-img {
-			width: 250px;
-			height: 250px;
+			max-width: 100%;
+			height: auto;
 			display: block;
-			margin-bottom: 10px;
+			margin: 0 auto 15px;
+			border-radius: 5px;
+		}
+
+		/* Responsive typography */
+		h1 {
+			font-size: 2rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+		}
+
+		/* Media Queries for responsiveness */
+		@media (max-width: 768px) {
+			.container {
+				flex-direction: column;
+			}
+
+			main {
+				margin-right: 0;
+				margin-bottom: 20px;
+			}
+
+			aside {
+				width: 100%;
+			}
+
+			h1 {
+				font-size: 1.8rem;
+			}
+
+			h2 {
+				font-size: 1.3rem;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.container {
+				width: 90%;
+				padding: 10px 0;
+			}
+
+			article {
+				padding: 10px 15px;
+			}
+
+			nav a {
+				padding: 8px;
+				margin-right: 5px;
+			}
+
+			h1 {
+				font-size: 1.6rem;
+			}
+
+			h2 {
+				font-size: 1.2rem;
+			}
+
+			#scrollToTopBtn {
+				padding: 10px;
+				font-size: 16px;
+				right: 15px;
+				bottom: 15px;
+			}
+		}
+
+		/* List styling */
+		ul {
+			padding-left: 20px;
+		}
+
+		li {
+			margin-bottom: 8px;
+		}
+
+		/* Link hover effects */
+		a:hover {
+			text-decoration: underline;
+		}
+
+		nav a:hover {
+			background-color: #3a6249;
+			border-radius: 4px;
 		}
 	</style> 
 	<title>Mias Technical Blogs</title>
-  <meta name="description" content="The Mias (Mahad Imam Asy-Syathiby) is a forward-thinking technical blog dedicated to unraveling the cutting-edge technology utilized at Mahad Imam Asy-Syathiby, fostering a community of learners and innovators.">
+	<meta name="description" content="The Mias (Mahad Imam Asy-Syathiby) is a forward-thinking technical blog dedicated to unraveling the cutting-edge technology utilized at Mahad Imam Asy-Syathiby, fostering a community of learners and innovators.">
 </head> 
 
 <body> 
@@ -115,55 +211,57 @@
 		<a href="https://syathiby.github.io"><b>Home</b></a>
 	</nav> 
 
-	<div class="container"> 
-		<main> 
-			<article> 
-				<h2>IT Infrastructure</h2> 
-				<p class="post-meta"> 
-					Published on 25 July 2024 by <a href="https://github.com/CreatorB" target="_blank" style="text-decoration: none; color:#244030;">creatorbe</a> (Hasan - ITS) 
-				</p> 
-              <p>Assalamualaykum, tech enthusiasts and curious learners! We're excited to take you behind the scenes at Mahad Tahfizh Quran Imam Asy-Syathiby Bogor, where we're harnessing the power of technology to enhance our educational offerings. From our dynamic web presence to our efficient network management, we're committed to providing a robust digital environment that supports learning and growth. Join us as we delve into the key components of our IT infrastructure.</p>
-              <p>
-                Our school's official website is the digital gateway to our community, and it's built on the versatile WordPress platform, Behind the scenes, currently our custom web applications are developed using robust PHP frameworks. Visual communication is key, and our design efforts are empowered by a suite of design tools such as Affinity and Adobe, it was handled by our designer : <a href="https://linktr.ee/futuraproject" target="_blank"><b>al-akh Danu (https://linktr.ee/futuraproject)</b></a>. In the other side  our network is the backbone of our IT infrastructure, managed efficiently with MikroTik.
-              </p>
-              <p>At Mahad Tahfizh Quran Imam Asy-Syathiby Bogor, we believe that the path to excellence is paved with feedback. We invite you to share your suggestions and criticisms to help us refine and elevate our IT infrastructure. Whether you have ideas for improving our system, enhancing our network capabilities, or any other tech-related insights, your input is invaluable. Together, we can continue to innovate and create a technologically advanced learning environment that fosters growth and achievement.
-         	<p>
-              We extend a warm invitation to all tech enthusiasts, developers, and collaborators to contribute to our GitHub repository : <a href="https://github.com/syathiby" target="_blank"><b>https://github.com/syathiby</b></a> also you can contact us at <a href="mailto:syathibyofficial@gmail.com"><b>syathibyofficial@gmail.com</b>.</a>. If you've reached out and haven't heard back, please don't hesitate to contact us again or just let me know <a href="https://github.com/CreatorB" target="_blank" style="text-decoration: none; color:#244030;">@creatorbe</a>, thanks.</p>
-              </p>
-			</article> 
+	<div class="content-wrapper">
+		<div class="container"> 
+			<main> 
+				<article> 
+					<h2>IT Infrastructure</h2> 
+					<p class="post-meta"> 
+						Published on 25 July 2024 by <a href="https://github.com/CreatorB" target="_blank" style="text-decoration: none; color:#244030;">creatorbe</a> (Hasan - ITS) 
+					</p> 
+					<p>Assalamualaykum, tech enthusiasts and curious learners! We're excited to take you behind the scenes at Mahad Tahfizh Quran Imam Asy-Syathiby Bogor, where we're harnessing the power of technology to enhance our educational offerings. From our dynamic web presence to our efficient network management, we're committed to providing a robust digital environment that supports learning and growth. Join us as we delve into the key components of our IT infrastructure.</p>
+					<p>
+						Our school's official website is the digital gateway to our community, and it's built on the versatile WordPress platform, Behind the scenes, currently our custom web applications are developed using robust PHP frameworks (TALL Stack), JS, Flutter (BloC & Cubit), etc because we're trying to adheres to the latest programming technologies and follows modern tech structures. Visual communication is key, and our design efforts are empowered by a suite of design tools such as Affinity and Adobe, it was handled by our designer : <a href="https://linktr.ee/futuraproject" target="_blank"><b>al-akh Danu (https://linktr.ee/futuraproject)</b></a>. In the other side our network is the backbone of our IT infrastructure, managed efficiently with MikroTik.
+					</p>
+					<p>At Mahad Tahfizh Quran Imam Asy-Syathiby Bogor, we believe that the path to excellence is paved with feedback. We invite you to share your suggestions and criticisms to help us refine and elevate our IT infrastructure. Whether you have ideas for improving our system, enhancing our network capabilities, or any other tech-related insights, your input is invaluable. Together, we can continue to innovate and create a technologically advanced learning environment that fosters growth and achievement.
+					<p>
+						We extend a warm invitation to all tech enthusiasts, developers, and collaborators to contribute to our GitHub repository : <a href="https://github.com/syathiby" target="_blank"><b>https://github.com/syathiby</b></a> also you can contact us at <a href="mailto:syathibyofficial@gmail.com"><b>syathibyofficial@gmail.com</b>.</a>. If you've reached out and haven't heard back, please don't hesitate to contact us again or just let me know <a href="https://github.com/CreatorB" target="_blank" style="text-decoration: none; color:#244030;">@creatorbe</a>, thanks.</p>
+					</p>
+				</article> 
 
-			<article> 
-				<h2>Extracurricular Computer</h2> 
-				<p class="post-meta"> 
-					Published on 25 July 2024 by <a href="https://github.com/CreatorB" target="_blank" style="text-decoration: none; color:#244030;">creatorbe</a> (Hasan - ITS) 
-				</p> 
-        <p>Unleashing Tech Talents: Discover Syathiby's Extracurricular Computer, we're excited to introduce you to the hidden gem at Mahad Tahfizh Quran Imam Asy-Syathiby Bogor – our extracurricular Computer Club. While our school may not specialize in technology (but focussed Tahfizh and Diniyyah), we believe that nurturing tech interests outside the classroom is crucial for developing well-rounded students ready to take on the digital world.</p>
-        
-        <b>Introduction to Tech Skills</b>
-        <p>The Lab focuses on introducing students to foundational tech skills:</p>
-        <ul>
-            <li><strong>Office Productivity : </strong>Learn to use Office and Google Workspace efficiently, essential for academic and future professional success.</li>
-            <li><strong>Basic Design : </strong>Explore graphic design principles and create their own digital artwork.</li>
-            <li><strong>Programming Fundamentals : </strong>Introduction to basic programming opens the door to the world of software development and computational thinking.</li>
-        </ul>
+				<article> 
+					<h2>Extracurricular Computer</h2> 
+					<p class="post-meta"> 
+						Published on 25 July 2024 by <a href="https://github.com/CreatorB" target="_blank" style="text-decoration: none; color:#244030;">creatorbe</a> (Hasan - ITS) 
+					</p> 
+					<p>Unleashing Tech Talents: Discover Syathiby's Extracurricular Computer, we're excited to introduce you to the hidden gem at Mahad Tahfizh Quran Imam Asy-Syathiby Bogor – our extracurricular Computer Club. While our school may not specialize in technology (but focussed Tahfizh and Diniyyah), we believe that nurturing tech interests outside the classroom is crucial for developing well-rounded students ready to take on the digital world.</p>
+					
+					<b>Introduction to Tech Skills</b>
+					<p>The Lab focuses on introducing students to foundational tech skills:</p>
+					<ul>
+						<li><strong>Office Productivity : </strong>Learn to use Office and Google Workspace efficiently, essential for academic and future professional success.</li>
+						<li><strong>Basic Design : </strong>Explore graphic design principles and create their own digital artwork.</li>
+						<li><strong>Programming Fundamentals : </strong>Introduction to basic programming opens the door to the world of software development and computational thinking.</li>
+					</ul>
 
-        <p>At Syathiby, our Lab is just a launchpad for tech exploration and skill development. By offering a supportive environment for learning and creating, we empower our students to embrace technology, whether they pursue it as a hobby or a career.</p>
+					<p>At Syathiby, our Lab is just a launchpad for tech exploration and skill development. By offering a supportive environment for learning and creating, we empower our students to embrace technology, whether they pursue it as a hobby or a career.</p>
 
-            <p>We value the voice of our community and are committed to continuous improvement. We invite you to share your suggestions and criticisms openly. Whether it's about enhancing our curriculum, improving facilities, or any aspect of our school, your feedback is crucial in helping us evolve and provide the best possible educational experience for our students.</p>
-			</article> 
-		</main> 
+					<p>We value the voice of our community and are committed to continuous improvement. We invite you to share your suggestions and criticisms openly. Whether it's about enhancing our curriculum, improving facilities, or any aspect of our school, your feedback is crucial in helping us evolve and provide the best possible educational experience for our students.</p>
+				</article> 
+			</main> 
 
-		<aside> 
-			<img src="https://github.com/syathiby/syathiby.github.io/raw/main/imgs/it-support-syathiby-2024-the-mias-its-syathiby.webp" alt="IT Support Syathiby 2024" class="responsive-img">
-			<h2>Our Links</h2> 
-			<ul> 
-				<li><a href="https://syathiby.id" target="_blank" style="text-decoration: none; color:#244030;">Official Site</a></li>
-				<li><a href="https://www.youtube.com/c/MahadImamSyathiby" target="_blank" style="text-decoration: none; color:#244030;">Youtube</a></li>
-				<li><a href="https://www.instagram.com/syathibyid" target="_blank" style="text-decoration: none; color:#244030;">Instagram</a></li>
-				<li><a href="https://linkedin.com/company/syathiby" target="_blank" style="text-decoration: none; color:#244030;">LinkedIn</a></li>
-			</ul> 
-		</aside> 
-	</div> 
+			<aside> 
+				<img src="https://github.com/syathiby/syathiby.github.io/raw/main/imgs/it-support-syathiby-2024-the-mias-its-syathiby.webp" alt="IT Support Syathiby 2024" class="responsive-img">
+				<h2>Our Links</h2> 
+				<ul> 
+					<li><a href="https://syathiby.id" target="_blank" style="text-decoration: none; color:#244030;">Official Site</a></li>
+					<li><a href="https://www.youtube.com/c/MahadImamSyathiby" target="_blank" style="text-decoration: none; color:#244030;">Youtube</a></li>
+					<li><a href="https://www.instagram.com/syathibyid" target="_blank" style="text-decoration: none; color:#244030;">Instagram</a></li>
+					<li><a href="https://linkedin.com/company/syathiby" target="_blank" style="text-decoration: none; color:#244030;">LinkedIn</a></li>
+				</ul> 
+			</aside> 
+		</div> 
+	</div>
 
 	<footer>
 		<p><a href="https://github.com/CreatorB" target="_blank" style="text-decoration: none; color:yellow;">creatorbe</a> © Syathiby ITS since 2024</p> 
@@ -172,6 +270,7 @@
 	<button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">Up</button>
 
 	<script>
+		// Scroll to top functionality
 		window.onscroll = function() {scrollFunction()};
 
 		function scrollFunction() {
